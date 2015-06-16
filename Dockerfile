@@ -7,6 +7,7 @@ RUN curl -s https://get.docker.com/builds/Linux/x86_64/docker-1.6.2 -o docker
 RUN chmod +x docker
 RUN cp docker /usr/bin/
 
-RUN gcloud components update -q
-RUN gcloud components update -q alpha
-RUN gcloud components update -q preview
+RUN gcloud components update -q && \
+    gcloud components update -q alpha && \
+    gcloud components update -q beta && \
+    gcloud components update -q preview
